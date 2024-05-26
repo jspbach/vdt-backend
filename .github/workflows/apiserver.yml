@@ -15,8 +15,8 @@ jobs:
       db:
         image: postgres
         env:
-          POSTGRES_USER: test-user
-          POSTGRES_PASSWORD: just-a-small-password
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -28,8 +28,8 @@ jobs:
 
     env:
       DJANGO_SECRET_KEY: dmjr4k5!uuwt3==2u!cxe@0ym9r^o(iggi3#(e=qlc+===%6ey
-      DB_USER: test-user
-      DB_PASSWORD: just-a-small-password
+      DB_USER: postgres
+      DB_PASSWORD: postgres
       DB_NAME: postgres
       DB_HOST: db
       DB_PORT: 5432
