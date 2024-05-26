@@ -1,0 +1,29 @@
+services:
+
+  db:
+    image: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    env_file:
+      - ./deployment/db-variables.env
+    expose:
+      - 5432
+    restart: always
+
+  apiserver:
+    image: apiserver
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile
+    env_file:
+      - ./deployment/api-variables.env
+    ports:
+      - "8080:8080"
+    volumes: # used in development only
+      - ${PWD}:/app
+    restart: always
+    depends_on:
+      - db
+
+volumes:
+  postgres-data:

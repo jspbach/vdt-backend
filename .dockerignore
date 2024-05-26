@@ -1,0 +1,19 @@
+# git, irrelevant docker files, and macos folders
+.git/
+.gitignore
+.DS_Store
+deployment/Dockerfile
+docker-compose.yaml
+.dockerignore
+README.md
+
+# python binaries and personal venv
+__pycache__/
+venv/
+
+# precommit stuff, shouldn't be in here anw
+.pre-commit-config.yaml
+requirements-formatting.txt
+
+# env file
+deployment/*.env
