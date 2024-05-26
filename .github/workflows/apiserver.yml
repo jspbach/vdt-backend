@@ -60,7 +60,7 @@ jobs:
       run: |
         cd apiserver/
 
-        ython manage.py makemigrations members
+        python manage.py makemigrations members
         python manage.py migrate members
         python manage.py loaddata person.json
 
