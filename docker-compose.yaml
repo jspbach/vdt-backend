@@ -4,6 +4,7 @@ services:
     image: postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - ${PWD}/data:/data # unmount this after data loading is successful
     env_file:
       - ./deployment/db-variables.env
     expose:
@@ -15,12 +16,14 @@ services:
     build:
       context: .
       dockerfile: deployment/Dockerfile
-    env_file:
-      - ./deployment/api-variables.env
-    ports:
-      - "8080:8080"
     volumes: # used in development only
       - ${PWD}:/app
+    env_file:
+      - ./deployment/api-variables.env
+    environment:
+      - RERUN_MIGRATIONS=false
+    ports:
+      - "8080:8080"
     restart: always
     depends_on:
       - db
