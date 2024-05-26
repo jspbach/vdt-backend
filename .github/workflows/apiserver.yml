@@ -27,7 +27,7 @@ jobs:
           - 5432:5432
 
     env:
-      DJANGO_SECRET_KEY: dmjr4k5!uuwt3==2u!cxe@0ym9r^o(iggi3#(e=qlc+===%6ey
+      DJANGO_SECRET_KEY: very-secret-key
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_NAME: postgres
