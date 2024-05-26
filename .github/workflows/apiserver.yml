@@ -10,7 +10,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     services:
       db:
         image: postgres
@@ -60,4 +60,9 @@ jobs:
     - name: Run tests
       run: |
         cd apiserver/
+
+        ython manage.py makemigrations members
+        python manage.py migrate members
+        python manage.py loaddata person.json
+
         python manage.py test
