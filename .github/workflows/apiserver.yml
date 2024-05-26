@@ -1,0 +1,54 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ test ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      db:
+        image: postgres
+        env:
+          POSTGRES_USER: test-user
+          POSTGRES_PASSWORD: just-a-small-password
+          POSTGRES_DB: testing
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    env:
+      DJANGO_SECRET_KEY: dmjr4k5!uuwt3==2u!cxe@0ym9r^o(iggi3#(e=qlc+===%6ey
+      DB_USER: test-user
+      DB_PASSWORD: just-a-small-password
+      DB_NAME: testing
+      DB_HOST: db
+      DB_PORT: 5432
+      PORT: 8080
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools
+        pip install poetry
+        poetry config virtualenvs.create false
+        poetry install --only main
+    - name: Wait for PostgreSQL to start
+      run: |
+        while ! pg_isready -h localhost -p 5432 > /dev/null 2> /dev/null; do
+          sleep 1
+        done
+    - name: Run tests
+      run: |
+        cd apiserver/
+        python manage.py test
