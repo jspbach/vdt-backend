@@ -17,8 +17,14 @@ jobs:
           POSTGRES_USER: test-user
           POSTGRES_PASSWORD: just-a-small-password
           POSTGRES_DB: testing
-        ports: ["5432:5432"]
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5432:5432
 
     env:
       DJANGO_SECRET_KEY: dmjr4k5!uuwt3==2u!cxe@0ym9r^o(iggi3#(e=qlc+===%6ey
@@ -30,10 +36,11 @@ jobs:
       PORT: 8080
 
     steps:
-    - uses: actions/checkout@v2
+
+    - uses: actions/checkout@v4
 
     - name: Set up Python 3.11
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: 3.11
 
