@@ -59,9 +59,4 @@ jobs:
     - name: Run tests
       run: |
         cd apiserver/
-
-        python manage.py makemigrations members
-        python manage.py migrate members
-        python manage.py loaddata person.json
-
         python manage.py test
