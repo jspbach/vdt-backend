@@ -6,4 +6,5 @@ from .models import Member
 class MemberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Member
-        fields = ["full_name", "gender", "institution"]
+        fields = ["full_name", "gender", "institution", "unique_id"]
+        read_only_fields: list[str] = ["unique_id"]

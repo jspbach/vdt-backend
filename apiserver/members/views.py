@@ -10,6 +10,7 @@ class MemberViewSet(viewsets.ModelViewSet):
     `update` and `destroy` actions.
     """
 
+    lookup_field = "unique_id"
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
     permission_classes = [permissions.AllowAny]
