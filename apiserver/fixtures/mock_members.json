@@ -1,0 +1,162 @@
+[
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Nguyễn Văn A",
+      "gender": "Nam",
+      "institution": "Đại học Bách Khoa"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Trần Thị B",
+      "gender": "Nữ",
+      "institution": "Đại học Kinh Tế"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Lê Văn C",
+      "gender": "Nam",
+      "institution": "Đại học Sư Phạm"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Phạm Thị D",
+      "gender": "Nữ",
+      "institution": "Đại học Y Hà Nội"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Hoàng Văn E",
+      "gender": "Nam",
+      "institution": "Đại học Xây Dựng"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Ngô Thị F",
+      "gender": "Nữ",
+      "institution": "Đại học Luật"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Đặng Văn G",
+      "gender": "Nam",
+      "institution": "Đại học Ngoại Ngữ"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Bùi Thị H",
+      "gender": "Nữ",
+      "institution": "Đại học Thương Mại"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Đỗ Văn I",
+      "gender": "Nam",
+      "institution": "Đại học Công Nghệ"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Lý Thị J",
+      "gender": "Nữ",
+      "institution": "Đại học Khoa Học Tự Nhiên"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Nguyễn Văn K",
+      "gender": "Nam",
+      "institution": "Đại học Bách Khoa"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Trần Thị L",
+      "gender": "Nữ",
+      "institution": "Đại học Kinh Tế"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Lê Văn M",
+      "gender": "Nam",
+      "institution": "Đại học Sư Phạm"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Phạm Thị N",
+      "gender": "Nữ",
+      "institution": "Đại học Y Hà Nội"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Hoàng Văn O",
+      "gender": "Nam",
+      "institution": "Đại học Xây Dựng"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Ngô Thị P",
+      "gender": "Nữ",
+      "institution": "Đại học Luật"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Đặng Văn Q",
+      "gender": "Nam",
+      "institution": "Đại học Ngoại Ngữ"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Bùi Thị R",
+      "gender": "Nữ",
+      "institution": "Đại học Thương Mại"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Đỗ Văn S",
+      "gender": "Nam",
+      "institution": "Đại học Công Nghệ"
+    }
+  },
+  {
+    "model": "members.Member",
+    "fields": {
+      "full_name": "Lý Thị T",
+      "gender": "Nữ",
+      "institution": "Đại học Khoa Học Tự Nhiên"
+    }
+  }
+]

@@ -8,8 +8,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
 
+    runs-on: ubuntu-latest
+    
     services:
       db:
         image: postgres
@@ -36,7 +37,6 @@ jobs:
       PORT: 8080
 
     steps:
-
     - uses: actions/checkout@v4
 
     - name: Set up Python 3.11
