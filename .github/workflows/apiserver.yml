@@ -44,13 +44,13 @@ jobs:
         poetry config virtualenvs.create false
         poetry install --only main
 
-    - name: Wait for PostgreSQL to start
+- name: Wait for PostgreSQL to start
       run: |
         while ! pg_isready -h localhost -p 5432 > /dev/null 2> /dev/null; do
           sleep 1
         done
 
-    - name: Run tests
+- name: Run tests
       run: |
         cd apiserver/
         python manage.py test
