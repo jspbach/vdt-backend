@@ -17,3 +17,6 @@ requirements-formatting.txt
 
 # env file
 deployment/*.env
+
+# data
+data/
