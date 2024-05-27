@@ -24,11 +24,20 @@ To remove bind mounts for development purposes, remove `volume` directive in bot
 
 ## Loading data into PostgreSQL
 
-If the data is not in PostgreSQL yet, it needs to be loaded first. Mount the `data/` directory in this repository to `/data` inside the `db` service.
 
-Go ahead and find the list of members (you should have one, it's on Google Docs), and make sure it's in CSV format.
+### Mock data and fixtures
 
-Rename that file to `data.csv` and put it inside `data/`. The file should be on the same level as `data/load_data.sql`.
+To adequately test the API server, the database may need to be populated. Django provides fixtures that can help us with this.
+
+Inside the `apiserver/fixtures/` folder is a JSON mock data dump. Set the `USE_FIXTURES` variable to `true` to get this into PostgreSQL.
+
+### Loading real data
+
+If you want to test this API on real data, here's how.
+
+Mount the `data/` directory in this repository to `/data` inside the `db` service.
+
+Go ahead and find the list of members (you should have one, it's on Google Docs), and make sure it's in CSV format. Rename that file to `data.csv` and put it inside `data/`. The file should be on the same level as `data/load_data.sql`.
 
 Now go into the PostgreSQL terminal and type:
 
@@ -36,4 +45,8 @@ Now go into the PostgreSQL terminal and type:
 psql -U $POSTGRES_USER -d $POSTGRES_DB -f /data/load_data.sql
 ```
 
-If the import works, the table will be displayed afterwards.
+If the import works, the table will be displayed afterwards with real data from your CSV file.
+
+### Migration
+
+Unless there is a need for changes in tables, migration need not happen again. Set the `RERUN_MIGRATIONS` variable to `false`.
