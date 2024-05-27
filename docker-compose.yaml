@@ -16,8 +16,8 @@ services:
     build:
       context: .
       dockerfile: deployment/Dockerfile
-    # volumes: # used for development purposes only
-    #   - ${PWD}:/app
+    volumes: # used for development purposes only
+      - ${PWD}:/app
     env_file:
       - ./deployment/api-variables.env
     environment:
