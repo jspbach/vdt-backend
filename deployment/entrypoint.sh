@@ -14,9 +14,10 @@ fi
 if [ "$USE_FIXTURES" = "true" ]
 then
   echo "Populate database with fixtures..."
-  python manage.py loaddata mock_members
+  python manage.py loaddata members/fixtures/mock_members.json
 else
   echo "USE_FIXTURES is not set to true, skipping fixture population."
 fi
+
 
 exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 apiserver.wsgi:application
