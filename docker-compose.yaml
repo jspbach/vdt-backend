@@ -22,6 +22,7 @@ services:
       - ./deployment/api-variables.env
     environment:
       - RERUN_MIGRATIONS=true
+      - USE_FIXTURES=false
     expose:
       - 8080
     # ports:

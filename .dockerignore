@@ -21,3 +21,6 @@ deployment/nginx.conf
 
 # data
 data/
+
+# github files
+.github/

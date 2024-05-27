@@ -1,6 +1,8 @@
 import csv
 import json
 
+"""Run this code to generate fixtures."""
+
 def csv_to_json_fixture(model_name, csv_file_path, json_file_path):
     with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
         reader = csv.DictReader(csv_file)
