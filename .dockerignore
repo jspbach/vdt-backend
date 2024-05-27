@@ -17,3 +17,10 @@ requirements-formatting.txt
 
 # env file
 deployment/*.env
+deployment/nginx.conf
+
+# data
+data/
+
+# github files
+.github/

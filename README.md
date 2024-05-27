@@ -19,3 +19,21 @@ Then contribute as normal. This command installs a pre-commit hook that will aut
 ## Running the webserver and database locally
 
 Run `docker compose up --build` to get this thing started. The API is now available at `http://localhost:8080`.
+
+To remove bind mounts for development purposes, remove `volume` directive in both services.
+
+## Loading data into PostgreSQL
+
+If the data is not in PostgreSQL yet, it needs to be loaded first. Mount the `data/` directory in this repository to `/data` inside the `db` service.
+
+Go ahead and find the list of members (you should have one, it's on Google Docs), and make sure it's in CSV format.
+
+Rename that file to `data.csv` and put it inside `data/`. The file should be on the same level as `data/load_data.sql`.
+
+Now go into the PostgreSQL terminal and type:
+
+```bash
+psql -U $POSTGRES_USER -d $POSTGRES_DB -f /data/load_data.sql
+```
+
+If the import works, the table will be displayed afterwards.
